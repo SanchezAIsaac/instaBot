@@ -31,8 +31,13 @@ class InstaBot(object):
     def get_following_set(self):
         return self._get_set("following")
 
+    def quit(self):
+        self.driver.quit()
+        print("Goodbye {}.".format(self.username))
+
     def _get_set(self, destination):
         followSet = set()
+        print("Retrieving usernames from \"{}\" tab".format(destination))
         self.driver.get("https://instagram.com/{}".format(self.username))
         sleep(4)
         followsLink = self.driver.find_element_by_xpath(
@@ -46,7 +51,6 @@ class InstaBot(object):
                     "//div[@class='oMwYe']"
                 )
             except:
-                print("waiting for page to load...")
                 sleep(4)
                 try:
                     omwye = self.driver.find_element_by_xpath(
@@ -59,7 +63,7 @@ class InstaBot(object):
             )
             sleep(0.75)
         sleep(2)
-        print("done")
+        print("done \n")
         content = self.driver.page_source
         soup = BeautifulSoup(content, 'lxml')
         for link in soup.find_all('a'):
@@ -68,12 +72,16 @@ class InstaBot(object):
         return followSet
 
 
-username = input("username: ")
-password = getpass(prompt="password: ")
+if __name__ == "__main__":
+    username = input("username: ")
+    password = getpass(prompt="password: ")
 
-botty = InstaBot(username, password)
+    botty = InstaBot(username, password)
 
-followingSet = botty.get_following_set()
-followerSet = botty.get_follower_set()
+    followingSet = botty.get_following_set()
+    followerSet = botty.get_follower_set()
 
-print(followingSet - followerSet)
+    print("\nThe following users are not following you back:")
+    print(followingSet - followerSet)
+
+    botty.quit()
