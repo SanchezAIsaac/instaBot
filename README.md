@@ -2,17 +2,17 @@ A working Instagram "bot" that scrapes the desktop version of the site using kno
 
 
 Documentation:
-	- New object "InstaBot(username, password)"
-				- Username and password as required arguments.
-				- Methods:
-						- "get_follower_set": returns the set of usernames who are found under "followers."
-						- "get_following_set": returns the set of usernames who are found under "following."
-						- "quit": closes the webdriver and terminates the current bot.
+- New object "InstaBot(username, password)"
+	- Username and password as required arguments.
+	- Methods:
+		- "get_follower_set": returns the set of usernames who are found under "followers."
+		- "get_following_set": returns the set of usernames who are found under "following."
+		- "quit": closes the webdriver and terminates the current bot.
 
 Neccesary libraries needed to run main.py:
-		- Selenium
-		- BeautifulSoup4
+- Selenium
+- BeautifulSoup4
 
 Other neccesary components:
-		- Chrome Webdriver (https://chromedriver.chromium.org/downloads)
-		- Internet connection
+- Chrome Webdriver (https://chromedriver.chromium.org/downloads)
+- Internet connection
