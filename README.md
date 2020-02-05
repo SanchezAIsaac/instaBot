@@ -2,7 +2,7 @@ A working Instagram "bot" that scrapes the desktop version of the site using kno
 
 
 Documentation:
-- New object "InstaBot(username, password)"
+- New object: InstaBot(username, password)
 	- Username and password as required arguments.
 	- Methods:
 		- "get_follower_set": returns the set of usernames who are found under "followers."
