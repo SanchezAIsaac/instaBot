@@ -12,6 +12,7 @@ Documentation:
 Neccesary libraries needed to run main.py:
 - Selenium
 - BeautifulSoup4
+- lxml
 
 Other neccesary components:
 - Chrome Webdriver (https://chromedriver.chromium.org/downloads)
