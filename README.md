@@ -15,5 +15,5 @@ Neccesary libraries needed to run main.py:
 - lxml
 
 Other neccesary components:
-- Chrome Webdriver (https://chromedriver.chromium.org/downloads)
+- Chrome Webdriver installed under /usr/local/bin (https://chromedriver.chromium.org/downloads)
 - Internet connection
